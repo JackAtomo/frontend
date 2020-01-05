@@ -1,5 +1,4 @@
 import React, { componets, useState } from "react";
-import Login from "./login.js";
 //form
 import "../../css/componets/pc/commons/login.css";
 // import Login from "../../componets/commons/login";
@@ -16,6 +15,20 @@ function Header() {
       <a onClick={() => setIsFormOpen(true)}>Log in</a>
       {isFormOpen && <Login />}
     </nav>
+  );
+}
+
+function Login() {
+  return (
+    <form action="" method="post">
+      <fieldset>
+        <label for="user">Usuario</label>
+        <input type="text" id="user" name="user" />
+        <label for="pass">Contraseña</label>
+        <input type="password" id="pass" name="pass" />
+        <button>Entrar</button>
+      </fieldset>
+    </form>
   );
 }
 

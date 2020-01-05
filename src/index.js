@@ -4,8 +4,6 @@ import ReactDOM from "react-dom";
 //
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import { useParams, useHistory } from "react-router";
-import { PrivateRoute } from "./componets/commons/PrivateRoute.js";
-import { AuthProvider } from "./componets/commons/auth-context";
 
 //componets//
 //header
@@ -46,32 +44,23 @@ const mainElement = document.getElementById("main");
 function App() {
   return (
     <BrowserRouter>
-      <AuthProvider>
-        <Switch>
-          {/* Si gestionase roles podría pasar un array e roles */}
-          {/* <PrivateRoute exact path="/" allowedRoles=['admin', 'user']> */}
-          <PrivateRoute exact path="/user">
-            <Consultar />
-          </PrivateRoute>
-
-          <Route path="/">
-            <Inicio />
-          </Route>
-          <Route path="/consultar">
-            <Consultar />
-          </Route>
-          <Route path="/contacto">
-            <Contacto />
-          </Route>
-          <Route path="*">
-            <NotFound />
-          </Route>
-        </Switch>
-      </AuthProvider>
+      <Switch>
+        <Route exact path="/">
+          <Inicio />
+        </Route>
+        <Route path="/consultar">
+          <Consultar />
+        </Route>
+        <Route path="/contacto">
+          <Contacto />
+        </Route>
+        <Route path="*">
+          <NotFound />
+        </Route>
+      </Switch>
     </BrowserRouter>
   );
 }
-
 function NotFound() {
   return <h3>Not Found</h3>;
 }

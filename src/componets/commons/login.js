@@ -2,7 +2,7 @@ import React, { componets } from "react";
 
 function Login() {
   return (
-    <form action="" method="post">
+    <form class="login_form" action="" method="post">
       <fieldset>
         <label for="user">Usuario</label>
         <input type="text" id="user" name="user" />
