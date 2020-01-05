@@ -1,0 +1,24 @@
+header form {
+  position: fixed;
+  display: flex;
+
+  padding-top: 15rem;
+
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+}
+header form fieldset {
+  max-width: 400px;
+  max-height: 150px;
+}
+header form fieldset {
+  background-color: white;
+  border: 4px solid #2e86c1;
+}
+header form fieldset input {
+  display: block;
+}
