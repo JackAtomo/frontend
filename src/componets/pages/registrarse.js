@@ -22,7 +22,7 @@ function Registrase(){
 return (
     <React.Fragment>
         <form id="registro" onSubmit={handleSubmit(handlesignUp)}>
-            <fieldset id="regis">
+            <div id="regis">
         <fieldset>
             <label for="firstName">Nombre</label>
                  <input type="text" id="firstName"/>
@@ -53,7 +53,7 @@ return (
                      <option>Other</option>
                  </select>
         </fieldset>
-        </fieldset >
+        </div >
         <button id="registrarse" type="submit"
         disabled={formState.isSubmitting}>
         Registrarse
