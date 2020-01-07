@@ -25,7 +25,7 @@ export function register({
     postalCode,
     phone,
     bornIn);
-return axios.post(`http://localhost:8000/api/accounts`, {
+return axios.post(`https://api-rest-seguros.herokuapp.com:8000/api/accounts`, {
   firstName: firstName,
   lastName: lastName,
   email: email,
