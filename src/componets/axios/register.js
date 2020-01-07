@@ -13,8 +13,6 @@ export function register({
   bornIn,
 })
 {
-  console.log("va");
-  let role="1";
   console.log(firstName,
     lastName,
     email,
@@ -25,6 +23,9 @@ export function register({
     postalCode,
     phone,
     bornIn);
+  console.log("va");
+  let role="1";
+  
 return axios.post(`https://api-rest-seguros.herokuapp.com:8000/api/accounts`, {
   firstName: firstName,
   lastName: lastName,
