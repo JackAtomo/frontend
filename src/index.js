@@ -5,26 +5,15 @@ import ReactDOM from "react-dom";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import { useParams, useHistory } from "react-router";
 
-//componets//
-//header
-import "./css/componets/pc/commons/header.css";
-import Header from "./componets/commons/header.js";
-import "./css/componets/pc/commons/login.css";
+import "./css/index.css";
 
-//header//
-//footer
-import "./css/componets/pc/commons/footer.css";
-import Footer from "./componets/commons/footer.js";
-//footer//
+//componets//
+
+import {Header, Footer, AuthProvider, PrivateRoute} from "./componets/commons/index";
 
 //main
-import "./css/componets/pc/pages/inicio.css";
-import "./css/componets/pc/pages/contacto.css";
-import "./css/componets/pc/pages/consultar.css";
+import {Consultar, Inicio, Contacto, Registrarse} from "./componets/pages/index"
 
-import Inicio from "./componets/pages/inicio.js";
-import Contacto from "./componets/pages/contacto.js";
-import { Consultar } from "./componets/pages/consultar.js";
 
 //main//
 
@@ -44,20 +33,28 @@ const mainElement = document.getElementById("main");
 function App() {
   return (
     <BrowserRouter>
-      <Switch>
-        <Route exact path="/">
-          <Inicio />
-        </Route>
-        <Route path="/consultar">
-          <Consultar />
-        </Route>
-        <Route path="/contacto">
-          <Contacto />
-        </Route>
-        <Route path="*">
-          <NotFound />
-        </Route>
-      </Switch>
+      <AuthProvider>
+        <Switch>
+          <Route exact path="/">
+            <Inicio />
+          </Route>
+          <Route path="/consultar">
+            <Consultar />
+          </Route>
+          <Route path="/contacto">
+            <Contacto />
+          </Route>
+          <Route path="/registrarse">
+        <Registrarse/>
+          </Route>
+          <Route path="*">
+            <NotFound />
+          </Route>
+        </Switch>
+        <PrivateRoute path="/user">
+          
+        </PrivateRoute>
+      </AuthProvider>
     </BrowserRouter>
   );
 }
