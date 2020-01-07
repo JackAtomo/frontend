@@ -52,13 +52,10 @@ export function AuthProvider({ children }) {
     address,
     postalCode,
     phone,
-    borIn,
-    role
+    bornIn,
   }) => {
     try {
-      const {
-        data: { token, user }
-      } = await register({
+      await register({
         firstName,
         lastName,
         email,
@@ -68,14 +65,8 @@ export function AuthProvider({ children }) {
         address,
         postalCode,
         phone,
-        borIn,
-        role
+        bornIn,
       });
-      setUser(user);
-      setIsAuthenticated(true);
-      if (token) {
-        history.push("/");
-      }
     } catch (error) {
       return Promise.reject(error);
     }

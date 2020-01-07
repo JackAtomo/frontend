@@ -2,7 +2,7 @@ import axios from "axios";
 
 export function register({
   firstName,
-  lasrName,
+  lastName,
   email,
   password,
   gender,
@@ -10,20 +10,32 @@ export function register({
   address,
   postalCode,
   phone,
-  borIn,
-  role
-}) {
-  return axios.post(`${process.env.REACT_APP_BACKEND_URL}/users`, {
-    firstName: firstName,
-    lastName: lasrName,
-    email: email,
-    password: password,
+  bornIn,
+})
+{
+  console.log("va");
+  let role="1";
+  console.log(firstName,
+    lastName,
+    email,
+    password,
+    gender,
+    dob,
+    address,
+    postalCode,
+    phone,
+    bornIn);
+return axios.post(`http://localhost:8000/api/accounts`, {
+  firstName: firstName,
+  lastName: lastName,
+  email: email,
+  password: password,
     gender: gender,
     DOB: dob,
     address: address,
     postalCode: postalCode,
     phone: phone,
-    bornIn: borIn,
+    bornIn: bornIn,
     userStatus: role
   });
 }
