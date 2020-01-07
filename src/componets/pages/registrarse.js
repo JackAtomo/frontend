@@ -41,7 +41,7 @@ return (
         <fieldset>
             <label for="email">Email</label>            
                  <input type="email" id="email"/>
-            <label for="password">Email</label>            
+            <label for="password">Password</label>            
                  <input type="password" id="password"/>
             <label for="address">Direccion</label>
                  <input type="text" id="address"/>
@@ -53,7 +53,7 @@ return (
                      <option>Other</option>
                  </select>
         </fieldset>
-        </div >
+        </div>
         <button id="registrarse" type="submit"
         disabled={formState.isSubmitting}>
         Registrarse
