@@ -11,6 +11,7 @@ function Registrarse() {
 
     const handleSignUp = formData => {
         return signUp(formData).catch(error => {
+            console.log(error.response.status);
           if (error.response.status === 409) {
             setError(
               "email",
