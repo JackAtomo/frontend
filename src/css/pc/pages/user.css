@@ -1,0 +1,83 @@
+main #user {
+    display: flex;
+    padding: 50px;
+    justify-content: space-around;
+  }
+  main #user #datos,
+  #solicitud,
+  #acciones {
+    border: 2px solid black;
+  }
+  main #user #datos h1,
+  #solicitud h1,
+  #acciones h1 {
+    font-size: 180%;
+    margin: 0px;
+    text-align: center;
+  }
+  main #user #datos h2,
+  #solicitud h2 {
+    font-size: 160%;
+    margin: 5px;
+  }
+  #solicitud h3 {
+    margin: 5px;
+  }
+
+  main #user #datos h3 {
+    font-size: 120%;
+  }
+  main #user #datos fieldset,
+  #solicitud fieldset {
+    border: none;
+  }
+  
+  main #user #acciones fieldset {
+    border: none;
+    display: block;
+    text-align: center;
+  }
+  main #user  fieldset button {
+    display: block;
+    width: 250px;
+    margin: 10px;
+  }
+  main #user  .danger {
+    border: 4px solid red;
+    width: 250px;
+  }
+  main #user #solicitud {
+    text-align: center;
+  }
+  main #user #solicitud input,
+  textarea {
+    width: 250px;
+  }
+  main #user #solicitud textarea {
+    height: 150px;
+  }
+  main #polizas fieldset{
+    border: none;
+
+  }
+  
+  main #contratar {
+  text-align: center;  
+  }
+  #mis_polizas{
+margin-top:0px;
+  }
+  #poliza{
+    text-align: center;
+  }
+  main #user #acciones fieldset input {
+    display: block;
+    margin: auto;
+  }
+  main #user #acciones fieldset select {
+    text-align: center;
+    margin: auto;
+  }
+  #cambio{
+    visibility: hidden;
+  }

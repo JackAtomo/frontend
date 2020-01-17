@@ -1,24 +1,38 @@
-header form {
+header #login  {
   position: fixed;
-  display: flex;
-
+  
   padding-top: 15rem;
-
+  display: flex;
+  justify-content: center;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
-  justify-content: center;
 }
-header form fieldset {
+  
+header #login  div {
   max-width: 400px;
-  max-height: 150px;
-}
-header form fieldset {
+  max-height: 250px;
   background-color: white;
   border: 4px solid #2e86c1;
+  text-align: right;
 }
-header form fieldset input {
+header #login form{
+  text-align: center;
+  margin:0px;
+
+}
+header #login div form fieldset {
+border:none;
+}
+header #login  fieldset input {
   display: block;
+}
+header #login  div .close{
+border-radius: 100%;
+border:none;
+margin: 0px;
+font-size: 20px;
+display: inline;
 }

@@ -9,10 +9,10 @@ import "./css/index.css";
 
 //componets//
 
-import {Header, Footer, AuthProvider, PrivateRoute} from "./componets/commons/index";
+import {Header, AuthProvider, PrivateRoute} from "./componets/commons/index";
 
 //main
-import {Consultar, Inicio, Contacto, Registrarse} from "./componets/pages/index"
+import {Consultar, Inicio, Contacto, Registrarse, User, Admin} from "./componets/pages/index"
 
 
 //main//
@@ -20,21 +20,29 @@ import {Consultar, Inicio, Contacto, Registrarse} from "./componets/pages/index"
 //componets//
 
 //header
-const headerElement = document.getElementById("header");
-ReactDOM.render(<Header />, headerElement);
+
 //header//
 //footer
-const footerElement = document.getElementById("footer");
-ReactDOM.render(<Footer />, footerElement);
+
 //footer//
 //main
-const mainElement = document.getElementById("main");
+const bodyElement = document.getElementById("body");
 
 function App() {
   return (
     <BrowserRouter>
       <AuthProvider>
+        <header>
+        <Header/>
+        </header>
+        <main>
         <Switch>
+        <PrivateRoute path="/user">
+          <User/>
+        </PrivateRoute>
+        <PrivateRoute path="/admin">
+          <Admin/>
+        </PrivateRoute>
           <Route exact path="/">
             <Inicio />
           </Route>
@@ -46,14 +54,12 @@ function App() {
           </Route>
           <Route path="/registrarse">
         <Registrarse/>
-          </Route>
+        </Route>
           <Route path="*">
             <NotFound />
           </Route>
         </Switch>
-        <PrivateRoute path="/user">
-          
-        </PrivateRoute>
+        </main>
       </AuthProvider>
     </BrowserRouter>
   );
@@ -62,5 +68,5 @@ function NotFound() {
   return <h3>Not Found</h3>;
 }
 
-ReactDOM.render(<App />, mainElement);
+ReactDOM.render(<App />, bodyElement);
 //main//
