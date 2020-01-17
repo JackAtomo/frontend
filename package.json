@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "keywords": [],
 "engines":{
-"node":"12.13.0"
+"node":"8.10.0"
 },
   "main": "src/index.js",
   "dependencies": {
